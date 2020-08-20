@@ -1,2 +1,2 @@
-module github.com/116356754/IOValue v0.0.1
+module github.com/116356754/IOModel
 go 1.14

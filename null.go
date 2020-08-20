@@ -1,4 +1,4 @@
-package IOValue
+package IOModel
 
 // IONull corresponds to null in JSON. It can be assigned to Value interface.
 // IONull is provided for IONull Object pattern and it should always be used

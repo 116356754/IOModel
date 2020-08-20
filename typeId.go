@@ -1,4 +1,4 @@
-package IOValue
+package IOModel
 
 // TypeID is an ID of a type. A unique value is assigned to each type.
 type TypeID int

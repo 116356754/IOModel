@@ -1,4 +1,4 @@
-package IOValue
+package IOModel
 
 const (
 	QUALITY_BAD           uint32 = 0x00
