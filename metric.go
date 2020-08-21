@@ -6,9 +6,11 @@
  */
 package IOModel
 
+//质量戳暂时分好与坏
 const (
-	QualityBad  uint8 = 0x00
-	QualityGood uint8 = 0x01
+	QualityBad    uint8 = 0x00
+	QualityGood   uint8 = 0x01
+	QualityUnkown uint8 = 0x02
 )
 
 //采集记录的数据结构
@@ -28,7 +30,7 @@ type GoMetric struct {
 }
 
 //反写操作的数据结构
-type GoWriteRecord struct {
-	TagId    string  `json:"id"`
-	TagValue IOValue `json:"val"`
+type GoWriteMetric struct {
+	DeviceId string             //需要写入的设备的id
+	Fields   map[string]IOValue //需要写入的点id和对应的值
 }

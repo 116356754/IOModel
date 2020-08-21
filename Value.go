@@ -41,6 +41,9 @@ func NewValue(v IOValue) interface{} {
 	return result
 }
 
+// MaxInt is a maximum value of an integer on 32-bit or 64-bit environment.
+const MaxInt = int(^uint(0) >> 1)
+
 // NewValue returns a Value object from interface{}.
 // Returns an error when value type is not supported in SensorBee.
 func NewIOValue(v interface{}) (IOValue, error) {
@@ -68,8 +71,8 @@ func NewIOValue(v interface{}) (IOValue, error) {
 	case int64:
 		return IOInt(vt), nil
 	case uint:
-		if vt > uint(math.MaxUint64) {
-			return nil, fmt.Errorf("an int value must be less than %v: %v", math.MaxUint64, vt)
+		if vt > uint(MaxInt) {
+			return nil, fmt.Errorf("an int value must be less than %v: %v", MaxInt, vt)
 		}
 		return IOInt(vt), nil
 	case uint8:
